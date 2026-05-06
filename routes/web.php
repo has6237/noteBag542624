@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Livewire\CreateNote;
+use App\Livewire\MyNotes;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/create', CreateNote::class)->name('notebag.create');
+    Route::get('/my', MyNotes::class)->name('notebag.mynotes');
+    
 });
 
 require __DIR__.'/auth.php';
