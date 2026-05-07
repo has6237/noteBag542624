@@ -2,7 +2,7 @@
     @foreach ($notes as $note)
 
     <div class="mt-5 border border-black p-3 bg-teal-100" wire:key="{{ $note->id }}">
-        <p class="font-semibold text-xl">{{ $note->title }}</p>
+        <a href="note/{{ $note->id }}/show"><p class="font-semibold text-xl">{{ $note->title }}</p></a>
         <p class="text-gray-400">{{ $note->created_at->diffForHumans() }}</p>
     </div>
         
