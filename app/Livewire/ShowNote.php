@@ -11,6 +11,15 @@ class ShowNote extends Component
 
     public function mount(Note $note) {
         $this->note = $note;
+        if (auth()->id() != $note->user->id) {
+        abort(403);
+    }
+    }
+
+    public function delete(Note $note) {
+        $note->delete();
+        session()->flash('status', 'Note successfully deleted');
+        return $this->redirect(route('notebag.mynotes'));
     }
     public function render()
     {

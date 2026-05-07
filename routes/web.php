@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\CreateNote;
 use App\Livewire\MyNotes;
 use App\Livewire\ShowNote;
+use App\Livewire\EditNote;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/create', CreateNote::class)->name('notebag.create');
     Route::get('/my', MyNotes::class)->name('notebag.mynotes');
-    Route::get('/note/{note}/show', ShowNote::class)->name('notebag.mynotes');
+    Route::get('/note/{note}/show', ShowNote::class)->name('notebag.shownote');
+    Route::get('/note/{note}/edit', EditNote::class)->name('notebag.editnote');
     
 });
 
